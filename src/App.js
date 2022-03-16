@@ -9,7 +9,7 @@ function App() {
     let randomIndex = Math.floor(Math.random() * arr.length);
     let randomAct = arr[randomIndex];
     if(contacts.some(contact => contact.name === randomAct.name)){
-      randomContact(contactsDB.slice(5));
+      randomContact(contactsDB);
     } else{
       setContacts([...contacts, randomAct]);
     }
@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <h1>IronContacts</h1>
       <div className="btns">
-        <button className="add" onClick={() => randomContact(contactsDB.slice(5))}>
+        <button className="add" onClick={() => randomContact(contactsDB)}>
           Add Random Contact
         </button>
         <button className="sortPop" onClick={sortPopularity}>
